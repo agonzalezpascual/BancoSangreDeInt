@@ -72,3 +72,5 @@ C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\Banco
 C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\ref\BancoSangre.dll
 C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\BancoSangre.pdb
 C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\BancoSangre.genruntimeconfig.cache
+C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\VentanaInterfaz.g.cs
+C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\VentanaInterfaz.baml

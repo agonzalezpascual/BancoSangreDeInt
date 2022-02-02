@@ -18,9 +18,9 @@
                     <Label x:Name="lblFil" Content="DNI" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtFil" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
                     <DataGrid x:Name="tablaDona" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="3"/>
-                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="172,345,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="172,345,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click"/>
                     <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="400,345,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Donaciones">

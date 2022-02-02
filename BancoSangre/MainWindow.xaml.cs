@@ -36,6 +36,7 @@ namespace BancoSangre
         TreeViewItem compatibilidad = new TreeViewItem();
         TreeViewItem dona = new TreeViewItem();
         TreeViewItem recibe = new TreeViewItem();
+        VentanaInterfaz bWin = new VentanaInterfaz();
         public MainWindow()
         {
             InitializeComponent();
@@ -43,6 +44,8 @@ namespace BancoSangre
             pueblaTablaDonaciones();
             iniciaListaCompatible();
             iniciaTreeCompa();
+            
+            
         }
 
         public void pueblaTablaDonantes() {
@@ -206,6 +209,18 @@ namespace BancoSangre
             dona.IsExpanded = true;
             recibe.IsExpanded = true;
 
+        }
+
+        private void botAnadir_Click(object sender, RoutedEventArgs e)
+        {
+            bWin.Owner = this;
+            bWin.Show();
+            
+        }
+
+        private void botMod_Click(object sender, RoutedEventArgs e)
+        {
+            bWin.Hide();
         }
     }
 }
