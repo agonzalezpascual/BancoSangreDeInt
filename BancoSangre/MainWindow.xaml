@@ -12,13 +12,14 @@
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="109*"/>
-                        <ColumnDefinition Width="685*"/>
+                        <ColumnDefinition Width="86*"/>
+                        <ColumnDefinition Width="599*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="lblFil" Content="DNI" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtFil" HorizontalAlignment="Left" Margin="92,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2"/>
-                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="258,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="486,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="txtFil" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <DataGrid x:Name="tablaDona" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="3"/>
+                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="172,345,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="400,345,0,0" VerticalAlignment="Top" Grid.Column="2"/>
                     <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
                 </Grid>
             </TabItem>
@@ -30,10 +31,10 @@
                     </Grid.ColumnDefinitions>
                     <Label x:Name="lblDonacion" Grid.Column="1" Content="DNI Donante" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtFilDonacion" Grid.Column="1" HorizontalAlignment="Left" Margin="111,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
+                    <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Compatibilidad" Margin="-2,-2,-2,0">
+            <TabItem Header="Compatibilidad" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="96">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33*"/>
@@ -41,10 +42,18 @@
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="1" Content="Grupo Sanguíneo" HorizontalAlignment="Left" Margin="44,38,0,0" VerticalAlignment="Top"/>
                     <Label Grid.Column="1" Content="RH" HorizontalAlignment="Left" Margin="44,84,0,0" VerticalAlignment="Top"/>
-                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="163,42,0,0" VerticalAlignment="Top" Width="48"/>
-                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="163,88,0,0" VerticalAlignment="Top" Width="48"/>
-                    <Button x:Name="botCompa" Grid.Column="1" Content="Averiguar Compatibilidad" HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top"/>
-                    <TreeView Grid.Column="1" Margin="506,0,0,0"/>
+                    <ComboBox x:Name="comboGrup" Grid.Column="1" HorizontalAlignment="Left" Margin="163,42,0,0" VerticalAlignment="Top" Width="48">
+                        <ComboBoxItem Content="A"/>
+                        <ComboBoxItem Content="B"/>
+                        <ComboBoxItem Content="AB"/>
+                        <ComboBoxItem Content="0"/>
+                    </ComboBox>
+                    <ComboBox x:Name="comboRh" Grid.Column="1" HorizontalAlignment="Left" Margin="163,88,0,0" VerticalAlignment="Top" Width="48">
+                        <ComboBoxItem Content="+"/>
+                        <ComboBoxItem Content="-"/>
+                    </ComboBox>
+                    <Button x:Name="botCompa" Grid.Column="1" Content="Averiguar Compatibilidad" HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top" Click="botCompa_Click"/>
+                    <TreeView x:Name="treeCom" Grid.Column="1" Margin="506,0,0,0"/>
                 </Grid>
             </TabItem>
         </TabControl>
