@@ -1,0 +1,53 @@
+﻿<Window x:Class="BancoSangre.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BancoSangre"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Donantes">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="109*"/>
+                        <ColumnDefinition Width="685*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblFil" Content="DNI" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtFil" HorizontalAlignment="Left" Margin="92,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2"/>
+                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="258,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="486,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Donaciones">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="761*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="lblDonacion" Grid.Column="1" Content="DNI Donante" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtFilDonacion" Grid.Column="1" HorizontalAlignment="Left" Margin="111,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Compatibilidad" Margin="-2,-2,-2,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="33*"/>
+                        <ColumnDefinition Width="761*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="1" Content="Grupo Sanguíneo" HorizontalAlignment="Left" Margin="44,38,0,0" VerticalAlignment="Top"/>
+                    <Label Grid.Column="1" Content="RH" HorizontalAlignment="Left" Margin="44,84,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="163,42,0,0" VerticalAlignment="Top" Width="48"/>
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" Margin="163,88,0,0" VerticalAlignment="Top" Width="48"/>
+                    <Button x:Name="botCompa" Grid.Column="1" Content="Averiguar Compatibilidad" HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top"/>
+                    <TreeView Grid.Column="1" Margin="506,0,0,0"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
