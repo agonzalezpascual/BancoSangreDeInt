@@ -1,26 +1,27 @@
-﻿<Window x:Class="BancoSangre.MainWindow"
+﻿<Window x:Name="ventana" x:Class="BancoSangre.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BancoSangre"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Activated="ventana_Activated">
     <Grid>
+
         <TabControl>
             <TabItem Header="Donantes">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="109*"/>
-                        <ColumnDefinition Width="86*"/>
-                        <ColumnDefinition Width="599*"/>
+                        <ColumnDefinition Width="98*"/>
+                        <ColumnDefinition Width="115*"/>
+                        <ColumnDefinition Width="581*"/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="lblFil" Content="DNI" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtFil" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
-                    <DataGrid x:Name="tablaDona" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="3"/>
-                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="172,345,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click"/>
-                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="400,345,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click"/>
+                    <Label x:Name="lblFil" Content="DNI" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top" Height="26" Width="31"/>
+                    <TextBox x:Name="txtFil" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" TextInput="txtFil_TextInput" KeyDown="txtFil_KeyDown" KeyUp="txtFil_KeyUp" Height="18" Grid.Column="1"/>
+                    <DataGrid x:Name="tablaDona" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" Grid.ColumnSpan="3" MouseDoubleClick="tablaDona_MouseDoubleClick"/>
+                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="172,345,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click" Height="20" Width="54"/>
+                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="400,345,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botEli_Click" Height="20" Width="46"/>
+                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click" Height="20" Width="39"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Donaciones">
@@ -30,7 +31,7 @@
                         <ColumnDefinition Width="761*"/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="lblDonacion" Grid.Column="1" Content="DNI Donante" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtFilDonacion" Grid.Column="1" HorizontalAlignment="Left" Margin="111,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtFilDonacion" Grid.Column="1" HorizontalAlignment="Left" Margin="111,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="txtFilDonacion_KeyUp"/>
                     <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
                 </Grid>
             </TabItem>
@@ -57,6 +58,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Rectangle x:Name="rectangulo" HorizontalAlignment="Left" Height="406" Stroke="Black" VerticalAlignment="Top" Width="794" Visibility="Hidden" Fill="#FF828282" Opacity="0.6"/>
 
     </Grid>
 </Window>

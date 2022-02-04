@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BancoSangre"
         mc:Ignorable="d"
-        Title="VentanaInterfaz" Height="450" Width="800">
+        Title="VentanaInterfaz" Height="450" Width="632" Closed="Window_Closed" Closing="Window_Closing"
+        >
     <Grid>
-        
+        <Label Content="DNI" HorizontalAlignment="Left" Margin="63,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDNI" HorizontalAlignment="Left" Margin="134,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="63,112,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Margin="134,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Apellido" HorizontalAlignment="Left" Margin="63,155,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtApe" HorizontalAlignment="Left" Margin="134,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Direccion" HorizontalAlignment="Left" Margin="63,186,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="169,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDir" HorizontalAlignment="Left" Margin="134,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Teléfono" HorizontalAlignment="Left" Margin="316,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nacimiento&#xD;&#xA;" HorizontalAlignment="Left" Margin="317,112,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="317,155,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.274,-0.119"/>
+        <Label Content="Grupo" HorizontalAlignment="Left" Margin="317,186,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboGrup" HorizontalAlignment="Left" Margin="394,190,0,0" VerticalAlignment="Top" Width="34">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="AB"/>
+            <ComboBoxItem Content="0"/>
+        </ComboBox>
+        <Label Content="RH" HorizontalAlignment="Left" Margin="455,186,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboRh" HorizontalAlignment="Left" Margin="506,189,0,0" VerticalAlignment="Top" Width="40">
+            <ComboBoxItem Content="+"/>
+            <ComboBoxItem Content="-"/>
+        </ComboBox>
+        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Margin="394,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="txtFec" HorizontalAlignment="Left" Margin="394,113,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEma" HorizontalAlignment="Left" Margin="394,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnCan" Content="Cancelar" HorizontalAlignment="Left" Margin="411,381,0,0" VerticalAlignment="Top" Click="btnCan_Click"/>
+        <Button x:Name="btnIns" Content="Insertar" HorizontalAlignment="Left" Margin="154,381,0,0" VerticalAlignment="Top" Click="btnIns_Click"/>
     </Grid>
 </Window>

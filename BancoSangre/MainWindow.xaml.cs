@@ -21,7 +21,11 @@ namespace BancoSangre
     public partial class MainWindow : Window
     {
         public List<Donante> listDon { get; set; }
+        public List<Donante> listDonaAux { get; set; }
         public List<Donacion> listDonac { get; set; }
+        public List<Donacion> listDonacAux { get; set; }
+        Donante d;
+        CRUD c = new CRUD();
 
         // Listas para comprobar la compatibilidad de donaciones
         public List<String> Are = new List<String>();
@@ -112,10 +116,6 @@ namespace BancoSangre
 
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void botCompa_Click(object sender, RoutedEventArgs e)
         {
@@ -214,13 +214,87 @@ namespace BancoSangre
         private void botAnadir_Click(object sender, RoutedEventArgs e)
         {
             bWin.Owner = this;
+            bWin.cambiaEstado(true);
             bWin.Show();
-            
+            //rectangulo.Visibility = Visibility.Visible;
+            pueblaTablaDonantes();
         }
 
         private void botMod_Click(object sender, RoutedEventArgs e)
         {
-            bWin.Hide();
+            bWin.Owner = this;
+            
+            bWin.pueblaCampos(d.Dni, d.Nombre, d.Apellido, d.Direccion,d.Nacimiento, d.Telefono, d.Email, d.Grupo, d.Rh);
+            bWin.cambiaEstado(false);
+            bWin.Show();
+            
+            //rectangulo.Visibility = Visibility.Hidden;
+        }
+        private void tablaDona_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            d = (Donante)tablaDona.SelectedItem;
+        }
+
+        private void botEli_Click(object sender, RoutedEventArgs e)
+        {
+            c.borrar(d.Dni);
+        }
+
+        private void txtFil_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            
+        }
+
+        private void txtFil_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void ventana_Activated(object sender, EventArgs e)
+        {
+            pueblaTablaDonantes();
+        }
+
+        private void txtFil_KeyUp(object sender, KeyEventArgs e)
+        {
+            using (bancosangreContext _context = new bancosangreContext())
+            {
+                listDon = _context.Donantes.ToList();
+                listDonaAux = _context.Donantes.ToList();
+
+                foreach (Donante d in listDon)
+                {
+                    if (d.Dni.Contains(txtFil.Text)) { }
+                    else
+                    {
+                        listDonaAux.Remove(d);
+                    }
+                }
+
+                tablaDona.ItemsSource = listDonaAux;
+
+            }
+        }
+
+        private void txtFilDonacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            using (bancosangreContext _context = new bancosangreContext())
+            {
+                listDonac = _context.Donacions.ToList();
+                listDonacAux = _context.Donacions.ToList();
+
+                foreach (Donacion d in listDonac)
+                {
+                    if (d.Dni.Contains(txtFilDonacion.Text)) { }
+                    else
+                    {
+                        listDonacAux.Remove(d);
+                    }
+                }
+
+                tablaDonac.ItemsSource = listDonacAux;
+
+            }
         }
     }
 }
