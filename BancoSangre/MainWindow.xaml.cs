@@ -12,13 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using ControlzEx.Theming;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace BancoSangre
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public List<Donante> listDon { get; set; }
         public List<Donante> listDonaAux { get; set; }

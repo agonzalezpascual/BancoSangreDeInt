@@ -11,13 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using ControlzEx.Theming;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace BancoSangre
 {
     /// <summary>
     /// Lógica de interacción para VentanaInterfaz.xaml
     /// </summary>
-    public partial class VentanaInterfaz : Window
+    public partial class VentanaInterfaz : MetroWindow
     {
         //PRUEBA UNITARIA A LA CONEXION Y AL COMPATIBILIDAD
         CRUD c = new CRUD();
