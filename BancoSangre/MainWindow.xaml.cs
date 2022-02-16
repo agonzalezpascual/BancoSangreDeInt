@@ -31,7 +31,7 @@ namespace BancoSangre
         CRUD c = new CRUD();
 
         // Listas para comprobar la compatibilidad de donaciones
-        public List<String> Are = new List<String>();
+        public List<String> Are = new List<string>();
         public List<String> Ado = new List<String>();
         public List<String> Bre = new List<String>();
         public List<String> Bdo = new List<String>();

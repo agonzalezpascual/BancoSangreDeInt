@@ -6,10 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BancoSangre"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Activated="ventana_Activated">
+        Title="MainWindow" Height="701" Width="1350" Activated="ventana_Activated">
     <Grid>
 
-        <TabControl>
+        <TabControl Style="{DynamicResource MahApps.Styles.TabControl.Animated}" Margin="316,42,0,0">
             <TabItem Header="Donantes">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
                     <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click" Height="20" Width="39"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Donaciones">
+            <TabItem Header="Donaciones" Margin="0,0,-84,1">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33*"/>
@@ -36,7 +36,7 @@
                     <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Compatibilidad" Margin="-2,-2,0,0" HorizontalAlignment="Left" Width="96">
+            <TabItem Header="Compatibilidad" Margin="102,140,0,-139" HorizontalAlignment="Left" Width="442">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33*"/>
@@ -59,7 +59,17 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Rectangle HorizontalAlignment="Left" Height="658" Margin="0,27,0,0" VerticalAlignment="Top" Width="40"/>
+
         <Rectangle x:Name="rectangulo" HorizontalAlignment="Left" Height="406" Stroke="Black" VerticalAlignment="Top" Width="794" Visibility="Hidden" Fill="#FF828282" Opacity="0.6"/>
+        <Rectangle Height="27" VerticalAlignment="Top" Fill="#FFFDFDFD">
+            <Rectangle.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="6" Color="Gray"/>
+            </Rectangle.Effect>
+
+
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Margin="0,27,0,558" Stroke="Black" Width="37"/>
 
     </Grid>
 </controls:MetroWindow>
