@@ -6,12 +6,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BancoSangre"
         mc:Ignorable="d"
-        Title="MainWindow" Height="701" Width="1350" Activated="ventana_Activated">
+        Title="Banco de sangre" Height="701" Width="1350" Activated="ventana_Activated">
     <Grid>
+        <Image Margin="10,133,0,0" Source="/donaciones.png" HorizontalAlignment="Left" Width="55" Height="76" VerticalAlignment="Top"/>
 
         <TabControl Style="{DynamicResource MahApps.Styles.TabControl.Animated}" Margin="316,42,0,0">
-            <TabItem Header="Donantes">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Header="Donantes" Margin="-314,87,310,-111" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+                <Grid Background="#FFE5E5E5" Margin="0,-58,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="98*"/>
                         <ColumnDefinition Width="115*"/>
@@ -25,8 +26,9 @@
                     <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click" Height="20" Width="39"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Donaciones" Margin="0,0,-84,1">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Header="Donaciones" Margin="-387,166,389,-194" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+
+                <Grid Background="#FFE5E5E5" Margin="0,-56,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33*"/>
                         <ColumnDefinition Width="761*"/>
@@ -36,8 +38,9 @@
                     <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Compatibilidad" Margin="102,140,0,-139" HorizontalAlignment="Left" Width="442">
-                <Grid Background="#FFE5E5E5">
+            <TabItem Header="Compatibilidad" Margin="-465,260,473,-288" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="8" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+
+                <Grid Background="#FFE5E5E5" Margin="0,-60,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="33*"/>
                         <ColumnDefinition Width="761*"/>
@@ -69,7 +72,23 @@
 
 
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Margin="0,27,0,558" Stroke="Black" Width="37"/>
+        <Rectangle HorizontalAlignment="Left" Width="76" Fill="#FFFDFDFD" Panel.ZIndex="-9">
+            <Rectangle.Effect>
+                <DropShadowEffect  ShadowDepth="0" BlurRadius="6" Color="Gray"/>
+            </Rectangle.Effect>
+
+        </Rectangle>
+        <Image HorizontalAlignment="Left" Height="46" Margin="14,222,0,0" VerticalAlignment="Top" Width="50" Source="/donantes.png" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="-8">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180.188"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="50" Margin="18,312,0,0" VerticalAlignment="Top" Width="40" Source="/compatibilidad.png" Panel.ZIndex="-8"/>
 
     </Grid>
 </controls:MetroWindow>
