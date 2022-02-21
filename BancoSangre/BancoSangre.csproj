@@ -11,6 +11,11 @@
     <None Remove="compatibilidad.png" />
     <None Remove="donaciones.png" />
     <None Remove="donantes.png" />
+    <None Remove="LOGITO.png" />
+    <None Remove="LOGITO2.png" />
+    <None Remove="LOGITO3.png" />
+    <None Remove="LOGITO4.png" />
+    <None Remove="logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +32,11 @@
     <Resource Include="compatibilidad.png" />
     <Resource Include="donaciones.png" />
     <Resource Include="donantes.png" />
+    <Resource Include="LOGITO.png" />
+    <Resource Include="LOGITO2.png" />
+    <Resource Include="LOGITO3.png" />
+    <Resource Include="LOGITO4.png" />
+    <Resource Include="logo.png" />
   </ItemGroup>
 
 </Project>

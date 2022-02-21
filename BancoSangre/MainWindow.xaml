@@ -7,11 +7,11 @@
         xmlns:local="clr-namespace:BancoSangre"
         mc:Ignorable="d"
         Title="Banco de sangre" Height="701" Width="1350" Activated="ventana_Activated">
-    <Grid>
+    <Grid Background="#FFE5E7EA">
         <Image Margin="10,133,0,0" Source="/donaciones.png" HorizontalAlignment="Left" Width="55" Height="76" VerticalAlignment="Top"/>
 
-        <TabControl Style="{DynamicResource MahApps.Styles.TabControl.Animated}" Margin="316,42,0,0">
-            <TabItem Header="Donantes" Margin="-314,87,310,-111" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+        <TabControl Style="{DynamicResource MahApps.Styles.TabControl.Animated}" Margin="349,46,0,30" Background="#FFE5E7EA">
+            <TabItem Header="Donantes" Margin="-347,84,343,-108" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
                 <Grid Background="#FFE5E5E5" Margin="0,-58,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="98*"/>
@@ -26,7 +26,7 @@
                     <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click" Height="20" Width="39"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Donaciones" Margin="-387,166,389,-194" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+            <TabItem Header="Donaciones" Margin="-417,161,419,-189" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
 
                 <Grid Background="#FFE5E5E5" Margin="0,-56,0,0">
                     <Grid.ColumnDefinitions>
@@ -38,7 +38,7 @@
                     <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Compatibilidad" Margin="-469,260,473,-288" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="8" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+            <TabItem Header="Compatibilidad" Margin="-500,256,504,-284" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="8" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
 
                 <Grid Background="#FFE5E5E5" Margin="0,-60,0,0">
                     <Grid.ColumnDefinitions>
@@ -89,6 +89,27 @@
             </Image.RenderTransform>
         </Image>
         <Image HorizontalAlignment="Left" Height="50" Margin="18,312,0,0" VerticalAlignment="Top" Width="40" Source="/compatibilidad.png" Panel.ZIndex="-8"/>
+        <Grid Margin="93,68,0,0" HorizontalAlignment="Left" Width="203" Height="587" VerticalAlignment="Top">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF2FDFF"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Source="/LOGITO4.png" Height="205" VerticalAlignment="Top" HorizontalAlignment="Center" Width="216">
+                <Image.Effect>
+                    <DropShadowEffect Color="#FFC39B9B" RenderingBias="Quality" ShadowDepth="2" BlurRadius="3"/>
+                </Image.Effect>
+            </Image>
+            <Label Content="ESTADÍSTICAS" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" Height="69" Width="202" Foreground="#FFDADADA" FontFamily="Arial" FontWeight="Normal" FontSize="10">
+
+            </Label>
+            <Label Content="Donantes" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Height="36" Width="72" Foreground="#FF5F5F5F" FontSize="14"/>
+            <Label x:Name="headerDonantestext" Content="1" VerticalAlignment="Top" Margin="26,228,0,0" Height="48" Width="40" HorizontalAlignment="Left" FontSize="24" FontWeight="Normal" Foreground="#FF4B4B4B"/>
+            <Label Content="Donaciones" HorizontalAlignment="Left" Margin="102,210,0,0" VerticalAlignment="Top" Height="36" Width="91" Foreground="#FF5F5F5F" FontSize="14"/>
+            <Label x:Name="headerDonacionestext" Content="1" VerticalAlignment="Top" Margin="128,228,0,0" Height="48" Width="40" HorizontalAlignment="Left" FontSize="24" FontWeight="Normal" Foreground="#FF4B4B4B"/>
+            <Separator HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="162" Height="19"/>
+        </Grid>
 
     </Grid>
 </controls:MetroWindow>
