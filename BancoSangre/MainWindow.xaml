@@ -38,7 +38,7 @@
                     <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Margin="23,66,10,48"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Compatibilidad" Margin="-465,260,473,-288" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="8" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
+            <TabItem Header="Compatibilidad" Margin="-469,260,473,-288" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="8" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
 
                 <Grid Background="#FFE5E5E5" Margin="0,-60,0,0">
                     <Grid.ColumnDefinitions>
