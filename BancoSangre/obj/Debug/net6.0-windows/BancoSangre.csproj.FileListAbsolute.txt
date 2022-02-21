@@ -134,3 +134,5 @@ C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\bin\
 C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\bin\Debug\net6.0-windows\de\MahApps.Metro.resources.dll
 C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\App.baml
+C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using ControlzEx.Theming;
 using MahApps.Metro.Controls.Dialogs;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace BancoSangre
 {
@@ -298,6 +300,15 @@ namespace BancoSangre
                 tablaDonac.ItemsSource = listDonacAux;
 
             }
+        }
+        public Func<ChartPoint, string> label = chartpoint => string.Format("{0} ({1:P)", chartpoint.Y, chartpoint.Participation);
+        private void PieChart_Loaded(object sender, RoutedEventArgs e)
+        {
+          
+        }
+        private void PieChart_DataClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

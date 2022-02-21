@@ -24,5 +24,6 @@
     <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\User-01\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.19</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\User-01\.nuget\packages\microsoft.entityframeworkcore.tools\6.0.1</PkgMicrosoft_EntityFrameworkCore_Tools>
     <PkgMahApps_Metro Condition=" '$(PkgMahApps_Metro)' == '' ">C:\Users\User-01\.nuget\packages\mahapps.metro\2.4.9</PkgMahApps_Metro>
+    <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\User-01\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
   </PropertyGroup>
 </Project>

@@ -4,8 +4,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BancoSangre"
-        mc:Ignorable="d"
+        xmlns:local="clr-namespace:BancoSangre" xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+                       mc:Ignorable="d"
         Title="Banco de sangre" Height="701" Width="1350" Activated="ventana_Activated">
     <Grid Background="#FFE5E7EA">
         <Image Margin="10,133,0,0" Source="/donaciones.png" HorizontalAlignment="Left" Width="55" Height="76" VerticalAlignment="Top"/>
@@ -109,6 +109,17 @@
             <Label Content="Donaciones" HorizontalAlignment="Left" Margin="102,210,0,0" VerticalAlignment="Top" Height="36" Width="91" Foreground="#FF5F5F5F" FontSize="14"/>
             <Label x:Name="headerDonacionestext" Content="1" VerticalAlignment="Top" Margin="128,228,0,0" Height="48" Width="40" HorizontalAlignment="Left" FontSize="24" FontWeight="Normal" Foreground="#FF4B4B4B"/>
             <Separator HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="162" Height="19"/>
+            <Wpf:PieChart Hoverable="False" Loaded="PieChart_Loaded">
+                <Wpf:PieChart.Series>
+                    <Wpf:PieSeries Title="1" Values="9" DataLabels="True" LabelPoint="{Binding PointLabel}"></Wpf:PieSeries>
+                    <Wpf:PieSeries Title="2" Values="4" DataLabels="True" ></Wpf:PieSeries>
+                    <Wpf:PieSeries Title="3" Values="4" DataLabels="True" ></Wpf:PieSeries>
+                    <Wpf:PieSeries Title="3" Values="4" DataLabels="True" ></Wpf:PieSeries>
+                  
+                </Wpf:PieChart.Series>
+                
+                
+            </Wpf:PieChart>
         </Grid>
 
     </Grid>
