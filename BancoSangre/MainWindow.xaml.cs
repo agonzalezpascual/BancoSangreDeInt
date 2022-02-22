@@ -17,6 +17,7 @@ using ControlzEx.Theming;
 using MahApps.Metro.Controls.Dialogs;
 using LiveCharts;
 using LiveCharts.Wpf;
+using LiveCharts.Defaults;
 
 namespace BancoSangre
 {
@@ -29,6 +30,8 @@ namespace BancoSangre
         public List<Donante> listDonaAux { get; set; }
         public List<Donacion> listDonac { get; set; }
         public List<Donacion> listDonacAux { get; set; }
+
+       
         Donante d;
         CRUD c = new CRUD();
 
@@ -53,11 +56,13 @@ namespace BancoSangre
             pueblaTablaDonaciones();
             iniciaListaCompatible();
             iniciaTreeCompa();
-            
-            
-        }
 
-        public void pueblaTablaDonantes() {
+
+
+        }
+        
+        public void pueblaTablaDonantes()
+        {
             using (bancosangreContext _context = new bancosangreContext())
             {
                 listDon = _context.Donantes.ToList();
@@ -78,7 +83,8 @@ namespace BancoSangre
             }
         }
 
-        public void iniciaListaCompatible() {
+        public void iniciaListaCompatible()
+        {
 
             Are.Add("A");
             Are.Add("0");
@@ -110,7 +116,7 @@ namespace BancoSangre
         }
         public void iniciaTreeCompa()
         {
-            
+
             compatibilidad.Header = "Compatibilidad";
             dona.Header = "Dona";
             recibe.Header = "Recibe";
@@ -128,15 +134,15 @@ namespace BancoSangre
             String rh = comboRh.Text;
             recibe.Items.Clear();
             dona.Items.Clear();
-            if(grup.Equals("A"))
+            if (grup.Equals("A"))
             {
                 foreach (String s in Are)
                 {
                     if (rh.Equals("+"))
                     {
-                        recibe.Items.Add(s+"+");
+                        recibe.Items.Add(s + "+");
                     }
-                    recibe.Items.Add(s+"-");
+                    recibe.Items.Add(s + "-");
                 }
                 foreach (String s in Ado)
                 {
@@ -148,7 +154,8 @@ namespace BancoSangre
                 }
 
 
-            }else if (grup.Equals("B"))
+            }
+            else if (grup.Equals("B"))
             {
                 foreach (String s in Bre)
                 {
@@ -168,7 +175,8 @@ namespace BancoSangre
                 }
 
 
-            } else if (grup.Equals("AB"))
+            }
+            else if (grup.Equals("AB"))
             {
                 foreach (String s in ABre)
                 {
@@ -228,11 +236,11 @@ namespace BancoSangre
         private void botMod_Click(object sender, RoutedEventArgs e)
         {
             bWin.Owner = this;
-            
-            bWin.pueblaCampos(d.Dni, d.Nombre, d.Apellido, d.Direccion,d.Nacimiento, d.Telefono, d.Email, d.Grupo, d.Rh);
+
+            bWin.pueblaCampos(d.Dni, d.Nombre, d.Apellido, d.Direccion, d.Nacimiento, d.Telefono, d.Email, d.Grupo, d.Rh);
             bWin.cambiaEstado(false);
             bWin.Show();
-            
+
             //rectangulo.Visibility = Visibility.Hidden;
         }
         private void tablaDona_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -247,12 +255,12 @@ namespace BancoSangre
 
         private void txtFil_TextInput(object sender, TextCompositionEventArgs e)
         {
-            
+
         }
 
         private void txtFil_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void ventana_Activated(object sender, EventArgs e)
@@ -301,13 +309,48 @@ namespace BancoSangre
 
             }
         }
-        public Func<ChartPoint, string> label = chartpoint => string.Format("{0} ({1:P)", chartpoint.Y, chartpoint.Participation);
+
+        public SeriesCollection SeriesCollection
+        {
+            get; set;
+
+        }
         private void PieChart_Loaded(object sender, RoutedEventArgs e)
         {
-          
-        }
-        private void PieChart_DataClick(object sender, RoutedEventArgs e)
-        {
+            try {
+
+                SeriesCollection = new SeriesCollection {
+
+                new PieSeries{
+                     Title ="1. ab",
+
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(45)},
+
+                     DataLabels = false
+                },
+                new PieSeries{
+                     Title ="2. b",
+
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(75)},
+
+                     DataLabels = false
+                },
+                new PieSeries{
+                     Title ="1. c",
+
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(12)},
+
+                     DataLabels = false
+                },
+            };
+                DataContext = this;
+                    }
+            catch (Exception exp){
+
+                MessageBox.Show("hay un error");
+            
+            }
+
 
         }
     }
