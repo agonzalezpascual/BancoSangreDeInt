@@ -109,10 +109,16 @@
             <Label Content="Donaciones" HorizontalAlignment="Left" Margin="102,210,0,0" VerticalAlignment="Top" Height="36" Width="91" Foreground="#FF5F5F5F" FontSize="14"/>
             <Label x:Name="headerDonacionestext" Content="1" VerticalAlignment="Top" Margin="128,228,0,0" Height="48" Width="40" HorizontalAlignment="Left" FontSize="24" FontWeight="Normal" Foreground="#FF4B4B4B"/>
             <Separator HorizontalAlignment="Center" Margin="0,275,0,0" VerticalAlignment="Top" Width="162" Height="19"/>
-            <Wpf:PieChart Name="PieChart" Series="{Binding SeriesCollection}" Hoverable="False" Loaded="PieChart_Loaded">
-               
-                
-                
+            <Wpf:PieChart Name="PieChart" Series="{Binding SeriesCollection}" Loaded="PieChart_Loaded" Margin="-1,294,1,75" LegendLocation="Bottom" ZoomingSpeed="0.2">
+
+                <Wpf:PieChart.Effect>
+                    
+                        <DropShadowEffect Color="#FFC39B9B" RenderingBias="Quality" ShadowDepth="2" BlurRadius="3"/>
+                    
+                </Wpf:PieChart.Effect>
+
+
+
             </Wpf:PieChart>
         </Grid>
 

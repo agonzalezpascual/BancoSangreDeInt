@@ -5,16 +5,16 @@ winexe
 C#
 .cs
 C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\
-BancoSangre_kx3m2zcc_wpftmp
+BancoSangre
 none
 false
-TRACE;RELEASE;NET;NET6_0;NETCOREAPP
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\App.xaml
 2314895856
 
-12-1328394550
-4381610957434
+9-1036782106
+219-1342004931
 MainWindow.xaml;VentanaInterfaz.xaml;
 
-True
+False
 

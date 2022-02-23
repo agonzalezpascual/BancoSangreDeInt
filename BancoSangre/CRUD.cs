@@ -123,7 +123,7 @@ namespace BancoSangre
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR " + ex.Message, "Error al insertar los datos.", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ERROR " + ex.Message, "Error al consultar el rosco", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 return je;
             }

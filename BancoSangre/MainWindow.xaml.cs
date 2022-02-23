@@ -267,6 +267,8 @@ namespace BancoSangre
         {
             pueblaTablaDonantes();
         }
+    
+
 
         private void txtFil_KeyUp(object sender, KeyEventArgs e)
         {
@@ -315,6 +317,8 @@ namespace BancoSangre
             get; set;
 
         }
+
+        
         private void PieChart_Loaded(object sender, RoutedEventArgs e)
         {
             CRUD one = new CRUD();
@@ -331,32 +335,37 @@ namespace BancoSangre
 
                 new PieSeries{
                      Title ="A",
-                      
+
 
                      Values = new ChartValues<ObservableValue>{ new ObservableValue(a) },
+                     DataLabels = true,
+                     Fill = Brushes.Tan
 
-                     DataLabels = false
+
                 },
                 new PieSeries{
                      Title ="B",
 
                      Values = new ChartValues<ObservableValue>{ new ObservableValue(b)},
+                      DataLabels = true,
+                      Fill = Brushes.Firebrick
 
-                     DataLabels = false
                 },
                 new PieSeries{
                      Title ="AB",
 
                      Values = new ChartValues<ObservableValue>{ new ObservableValue(ab)},
 
-                     DataLabels = false
+                      DataLabels = true,
+                      Fill = Brushes.Crimson
                 },
                 new PieSeries{
                      Title ="0",
 
                      Values = new ChartValues<ObservableValue>{ new ObservableValue(zero)},
 
-                     DataLabels = false
+                      DataLabels = true,
+                      Fill = Brushes.BurlyWood
                 },
             };
                 DataContext = this;
