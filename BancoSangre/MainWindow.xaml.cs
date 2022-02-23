@@ -317,28 +317,44 @@ namespace BancoSangre
         }
         private void PieChart_Loaded(object sender, RoutedEventArgs e)
         {
+            CRUD one = new CRUD();
+           double a= one.RellenarRosco("a");
+           double b= one.RellenarRosco("b");
+           double ab= one.RellenarRosco("ab");
+           double zero= one.RellenarRosco("0");
+
+
+
             try {
 
                 SeriesCollection = new SeriesCollection {
 
                 new PieSeries{
-                     Title ="1. ab",
+                     Title ="A",
+                      
 
-                     Values = new ChartValues<ObservableValue>{ new ObservableValue(45)},
-
-                     DataLabels = false
-                },
-                new PieSeries{
-                     Title ="2. b",
-
-                     Values = new ChartValues<ObservableValue>{ new ObservableValue(75)},
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(a) },
 
                      DataLabels = false
                 },
                 new PieSeries{
-                     Title ="1. c",
+                     Title ="B",
 
-                     Values = new ChartValues<ObservableValue>{ new ObservableValue(12)},
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(b)},
+
+                     DataLabels = false
+                },
+                new PieSeries{
+                     Title ="AB",
+
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(ab)},
+
+                     DataLabels = false
+                },
+                new PieSeries{
+                     Title ="0",
+
+                     Values = new ChartValues<ObservableValue>{ new ObservableValue(zero)},
 
                      DataLabels = false
                 },

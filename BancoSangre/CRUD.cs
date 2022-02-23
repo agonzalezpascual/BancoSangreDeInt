@@ -15,7 +15,8 @@ namespace BancoSangre
         public List<Donante> listPer { get; set; }
 
         // Método insertar
-        public void insertar(string textoNom, string textoApe, string textoDNI, string textoDirec, string textoTelf, string textoNac, string textoEma, string textoGru, string textoRh) {
+        public void insertar(string textoNom, string textoApe, string textoDNI, string textoDirec, string textoTelf, string textoNac, string textoEma, string textoGru, string textoRh)
+        {
 
             // Creamos la conexión y hacemos la consulta
             try
@@ -23,7 +24,7 @@ namespace BancoSangre
                 SqlConnection con = new SqlConnection(conexion);
                 con.Open();
                 SqlCommand command = new SqlCommand("INSERT INTO Donante(DNI, nombre, apellido, direccion, telefono, nacimiento, email, grupo, rh) " +
-                    "VALUES ('" + textoDNI + "', '" + textoNom+"', '"+textoApe+ "', '" + textoDirec + "', '" + textoTelf + "', '" + textoNac + "', '" + textoEma + "', '" + textoGru + "', '" + textoRh + "');", con);
+                    "VALUES ('" + textoDNI + "', '" + textoNom + "', '" + textoApe + "', '" + textoDirec + "', '" + textoTelf + "', '" + textoNac + "', '" + textoEma + "', '" + textoGru + "', '" + textoRh + "');", con);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Insertado correctamente.");
                 con.Close();
@@ -44,7 +45,7 @@ namespace BancoSangre
                 SqlConnection con = new SqlConnection(conexion);
                 con.Open();
                 SqlCommand command = new SqlCommand("UPDATE Donante SET " +
-                    "nombre = '" + textoNom + "', apellido = '" + textoApe + "', direccion = '" + textoDirec+ "', telefono = '" + textoTelf + "', nacimiento = '" + textoNac + "', email = '" + textoEma + "', grupo = '" + textoGru + "', rh = '" + textoRh + "' WHERE DNI = '" + textoDNI+"';", con);
+                    "nombre = '" + textoNom + "', apellido = '" + textoApe + "', direccion = '" + textoDirec + "', telefono = '" + textoTelf + "', nacimiento = '" + textoNac + "', email = '" + textoEma + "', grupo = '" + textoGru + "', rh = '" + textoRh + "' WHERE DNI = '" + textoDNI + "';", con);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Insertado correctamente.");
                 con.Close();
@@ -57,7 +58,8 @@ namespace BancoSangre
             }
         }
         // Método borrar
-        public void borrar(string DNI) {
+        public void borrar(string DNI)
+        {
             try
             {
                 // Creamos la conexión y hacemos la consulta
@@ -75,6 +77,8 @@ namespace BancoSangre
             }
 
         }
+
+
         // Método buscar
         public DataTable buscar(string textoBuscar)
         {
@@ -98,7 +102,34 @@ namespace BancoSangre
                 // Retornamos un dataset
                 return dt;
             }
-        }
 
+        }
+        public double RellenarRosco(string tiposangre)
+        {
+
+            //he parido esta mierda luego de 2 putos dias jodeeeer siiiii ostiaaaaaa
+            int je = 0;
+            try
+            {
+
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Donante WHERE grupo = '" + tiposangre + "';", con);
+               
+                je = (Int32)command.ExecuteScalar();
+
+                return je;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR " + ex.Message, "Error al insertar los datos.", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                return je;
+            }
+
+
+        }
     }
 }
+
