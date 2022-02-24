@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\
+C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\
 BancoSangre
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\User-01\Source\Repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\App.xaml
+C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\App.xaml
 2314895856
 
 9-1036782106
 219-1342004931
 MainWindow.xaml;VentanaInterfaz.xaml;
 
-False
+True
 

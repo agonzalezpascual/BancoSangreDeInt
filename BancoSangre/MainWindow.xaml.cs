@@ -30,8 +30,9 @@ namespace BancoSangre
         public List<Donante> listDonaAux { get; set; }
         public List<Donacion> listDonac { get; set; }
         public List<Donacion> listDonacAux { get; set; }
+        public string PlaceholderText { get; set; }
 
-       
+
         Donante d;
         CRUD c = new CRUD();
 
@@ -49,6 +50,9 @@ namespace BancoSangre
         TreeViewItem dona = new TreeViewItem();
         TreeViewItem recibe = new TreeViewItem();
         VentanaInterfaz bWin = new VentanaInterfaz();
+
+
+      
         public MainWindow()
         {
             InitializeComponent();
@@ -63,10 +67,11 @@ namespace BancoSangre
         
         public void pueblaTablaDonantes()
         {
+            
             using (bancosangreContext _context = new bancosangreContext())
             {
                 listDon = _context.Donantes.ToList();
-
+                
                 tablaDona.ItemsSource = listDon;
 
             }

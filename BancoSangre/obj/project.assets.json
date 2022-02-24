@@ -2110,11 +2110,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User-01\\Source\\Repos\\agonzalezpascual\\BancoSangreDeInt\\BancoSangre\\BancoSangre.csproj",
+      "projectUniqueName": "C:\\Users\\User-01\\source\\repos\\agonzalezpascual\\BancoSangreDeInt\\BancoSangre\\BancoSangre.csproj",
       "projectName": "BancoSangre",
-      "projectPath": "C:\\Users\\User-01\\Source\\Repos\\agonzalezpascual\\BancoSangreDeInt\\BancoSangre\\BancoSangre.csproj",
+      "projectPath": "C:\\Users\\User-01\\source\\repos\\agonzalezpascual\\BancoSangreDeInt\\BancoSangre\\BancoSangre.csproj",
       "packagesPath": "C:\\Users\\User-01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User-01\\Source\\Repos\\agonzalezpascual\\BancoSangreDeInt\\BancoSangre\\obj\\",
+      "outputPath": "C:\\Users\\User-01\\source\\repos\\agonzalezpascual\\BancoSangreDeInt\\BancoSangre\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",

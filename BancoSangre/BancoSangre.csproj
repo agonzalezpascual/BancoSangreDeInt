@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="abajito.png" />
+    <None Remove="abajito2.png" />
+    <None Remove="abajo.png" />
     <None Remove="compatibilidad.png" />
     <None Remove="donaciones.png" />
     <None Remove="donantes.png" />
@@ -16,6 +19,8 @@
     <None Remove="LOGITO3.png" />
     <None Remove="LOGITO4.png" />
     <None Remove="logo.png" />
+    <None Remove="lupita.png" />
+    <None Remove="neesitoabajo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="abajito.png" />
+    <Resource Include="abajito2.png" />
+    <Resource Include="abajo.png" />
     <Resource Include="compatibilidad.png" />
     <Resource Include="donaciones.png" />
     <Resource Include="donantes.png" />
@@ -38,6 +46,8 @@
     <Resource Include="LOGITO3.png" />
     <Resource Include="LOGITO4.png" />
     <Resource Include="logo.png" />
+    <Resource Include="lupita.png" />
+    <Resource Include="neesitoabajo.png" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\BancoSangre"
   ],
-  "SelectedNode": "\\BancoSangre.sln",
+  "SelectedNode": "\\BancoSangre\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

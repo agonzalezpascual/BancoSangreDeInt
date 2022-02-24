@@ -12,19 +12,53 @@
 
         <TabControl Style="{DynamicResource MahApps.Styles.TabControl.Animated}" Margin="349,46,0,30" Background="#FFE5E7EA">
             <TabItem Header="Donantes" Margin="-347,84,343,-108" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
-                <Grid Background="#FFE5E5E5" Margin="0,-58,0,0">
+                <Grid Background="White" Margin="0,0,86,10">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="98*"/>
-                        <ColumnDefinition Width="115*"/>
-                        <ColumnDefinition Width="581*"/>
+                        <ColumnDefinition Width="112*"/>
+                        <ColumnDefinition Width="126*"/>
+                        <ColumnDefinition Width="671*"/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="lblFil" Content="DNI" HorizontalAlignment="Left" Margin="29,21,0,0" VerticalAlignment="Top" Height="26" Width="31"/>
-                    <TextBox x:Name="txtFil" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" TextInput="txtFil_TextInput" KeyDown="txtFil_KeyDown" KeyUp="txtFil_KeyUp" Height="18" Grid.Column="1"/>
-                    <DataGrid x:Name="tablaDona" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,87,0,112" RenderTransformOrigin="0.495,0.749" Grid.ColumnSpan="3" MouseDoubleClick="tablaDona_MouseDoubleClick"/>
-                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="172,345,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click" Height="20" Width="54"/>
-                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="400,345,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botEli_Click" Height="20" Width="46"/>
-                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="4,345,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click" Height="20" Width="39"/>
+                    <TextBox x:Name="txtFil" Margin="52,358,335,0" TextWrapping="Wrap" VerticalAlignment="Top" TextInput="txtFil_TextInput" KeyDown="txtFil_KeyDown" KeyUp="txtFil_KeyUp" Height="26" Grid.Column="2" Background="#FFECECEC" Tag="DNI" UndoLimit="93" TextChanged="txtFil_TextChanged" Text="DNI">
+                        <TextBox.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="6" Color="Gray"/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <DataGrid x:Name="tablaDona" d:ItemsSource="{d:SampleData ItemCount=5}"  Margin="11,87,132,304" RenderTransformOrigin="0.495,0.749" Grid.ColumnSpan="2" MouseDoubleClick="tablaDona_MouseDoubleClick" SnapsToDevicePixels="True" CanUserReorderColumns="False" CanUserResizeColumns="False" Grid.Column="1" ColumnWidth="SizeToCells" MinColumnWidth="40" Background="#00000000" Panel.ZIndex="-10" >
+                        <DataGrid.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Style.Setters>
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                    <Setter Property="Margin" Value="2"></Setter>
+                                </Style.Setters>
+                            </Style>
+                        </DataGrid.CellStyle>
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="15" />
+                                <Setter Property="Background" Value="Transparent"></Setter>
+                                <Setter Property="FontWeight" Value="Light"></Setter>
+                                <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                    </DataGrid>
+                    <Button x:Name="botMod" Content="Modificar" HorizontalAlignment="Left" Margin="234,425,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click" Height="25" Width="54"/>
+                    <Button x:Name="botEli" Content="Eliminar" HorizontalAlignment="Left" Margin="462,425,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botEli_Click" Height="25" Width="46"/>
+                    <Button x:Name="botAnadir" Content="Añadir" HorizontalAlignment="Left" Margin="66,425,0,0" VerticalAlignment="Top" Grid.Column="1" Click="botAnadir_Click" Height="25" Width="39"/>
+                    <Separator Margin="110,87,112,0" VerticalAlignment="Top" Height="39" Grid.ColumnSpan="3" Grid.RowSpan="1"/>
+                    <Separator Margin="110,66,112,0" VerticalAlignment="Top" Height="39" Grid.ColumnSpan="3" Grid.RowSpan="1"/>
+                    <Image Margin="0,203,0,0" Source="/neesitoabajo.png" Stretch="Fill" Grid.ColumnSpan="3" Panel.ZIndex="-8"/>
+                    <TextBox x:Name="txtFil_Copy" HorizontalAlignment="Left" Margin="314,358,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="23" TextInput="txtFil_TextInput" KeyDown="txtFil_KeyDown" KeyUp="txtFil_KeyUp" Height="26" Grid.Column="2" Background="#FFECECEC" IsEnabled="False">
+                        <TextBox.Effect>
+                            <DropShadowEffect ShadowDepth="0" BlurRadius="6" Color="Gray"/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Image Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="314,361,0,0" VerticalAlignment="Top" Width="20" Source="/lupita.png" Stretch="Fill" RenderTransformOrigin="0.579,0.552"/>
                 </Grid>
+
             </TabItem>
             <TabItem Header="Donaciones" Margin="-417,161,419,-189" Background="Transparent" RenderTransformOrigin="0.51,0.78" controls:HeaderedControlHelper.HeaderFontSize="10" controls:HeaderedControlHelper.HeaderFontStretch="Normal" controls:HeaderedControlHelper.HeaderFontWeight="Heavy" controls:ControlsHelper.ContentCharacterCasing="Upper" FlowDirection="LeftToRight" controls:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center" >
 
@@ -112,9 +146,9 @@
             <Wpf:PieChart Name="PieChart" Series="{Binding SeriesCollection}" Loaded="PieChart_Loaded" Margin="-1,294,1,75" LegendLocation="Bottom" ZoomingSpeed="0.2">
 
                 <Wpf:PieChart.Effect>
-                    
-                        <DropShadowEffect Color="#FFC39B9B" RenderingBias="Quality" ShadowDepth="2" BlurRadius="3"/>
-                    
+
+                    <DropShadowEffect Color="#FFC39B9B" RenderingBias="Quality" ShadowDepth="2" BlurRadius="3"/>
+
                 </Wpf:PieChart.Effect>
 
 
