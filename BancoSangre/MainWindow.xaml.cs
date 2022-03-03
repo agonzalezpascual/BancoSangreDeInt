@@ -18,6 +18,12 @@ using MahApps.Metro.Controls.Dialogs;
 using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Defaults;
+using LiveCharts.Definitions.Charts;
+using LiveCharts.Definitions.Series;
+using LiveCharts.Dtos;
+using LiveCharts.Helpers;
+using LiveCharts.Defaults;
+
 
 namespace BancoSangre
 {
@@ -383,5 +389,32 @@ namespace BancoSangre
 
 
         }
+
+        private void positivosnegativos_Loaded(object sender, DataTransferEventArgs e)
+        {
+            SeriesCollection s = new SeriesCollection
+                {
+                new ColumnSeries
+                {
+                    Title = "2015",
+                    Values = new ChartValues<double> { 10, 50, 39, 50 }
+                }
+            };
+            //adding series will update and animate the chart automatically
+           s.Add(new ColumnSeries
+            {
+                Title = "2016",
+                Values = new ChartValues<double> { 11, 56, 42 }
+            });
+            s[1].Values.Add(48d);
+
+            Labels = new[] { "Maria", "Susan", "Charles", "Frida" };
+            Formatter = value => value.ToString("N");
+
+            DataContext = this;
+        }
+        public SeriesCollection s{ get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> Formatter { get; set; }
     }
-}
+    }
