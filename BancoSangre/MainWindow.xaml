@@ -18,7 +18,7 @@
                         <ColumnDefinition Width="126*"/>
                         <ColumnDefinition Width="671*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="txtFil" Margin="52,358,335,0" TextWrapping="Wrap" VerticalAlignment="Top" TextInput="txtFil_TextInput" KeyDown="txtFil_KeyDown" KeyUp="txtFil_KeyUp" Height="26" Grid.Column="2" Background="#FFECECEC" Tag="DNI" UndoLimit="93" TextChanged="txtFil_TextChanged" Text="DNI">
+                    <TextBox x:Name="txtFil" Margin="52,358,335,0" TextWrapping="Wrap" VerticalAlignment="Top" TextInput="txtFil_TextInput" KeyDown="txtFil_KeyDown" KeyUp="txtFil_KeyUp" Height="26" Grid.Column="2" Background="#FFECECEC" Tag="DNI" UndoLimit="93" Text="DNI">
                         <TextBox.Effect>
                             <DropShadowEffect ShadowDepth="0" BlurRadius="6" Color="Gray"/>
                         </TextBox.Effect>
@@ -92,7 +92,16 @@
                         <ComboBoxItem Content="-"/>
                     </ComboBox>
                     <Button x:Name="botCompa" Grid.Column="1" Content="Averiguar Compatibilidad" HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top" Click="botCompa_Click"/>
-                    <TreeView x:Name="treeCom" Grid.Column="1" Margin="506,0,0,0"/>
+                    
+                    
+                    
+                    
+                    
+                    <TreeView x:Name="treeCom" Grid.Column="1" Margin="439,34,67,34">
+                        <TreeView.Effect>
+                            <DropShadowEffect/>
+                        </TreeView.Effect>
+                    </TreeView>
                 </Grid>
             </TabItem>
         </TabControl>
