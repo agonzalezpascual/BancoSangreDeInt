@@ -8,3 +8,4 @@
     PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_CodSan] FOREIGN KEY ([CodSanitario]) REFERENCES [dbo].[Sanitario] ([CodSanitario])
 );
+

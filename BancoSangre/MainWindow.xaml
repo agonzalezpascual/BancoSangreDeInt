@@ -78,7 +78,15 @@
                             <DropShadowEffect ShadowDepth="0" BlurRadius="6" Color="Gray"/>
                         </TextBox.Effect>
                     </TextBox>
-                    <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="11,87,112,304" RenderTransformOrigin="0.495,0.749" Grid.ColumnSpan="2" MouseDoubleClick="tablaDona_MouseDoubleClick" SnapsToDevicePixels="True" CanUserReorderColumns="False" CanUserResizeColumns="False" Grid.Column="1" ColumnWidth="75" MinColumnWidth="40" Background="#00000000" Panel.ZIndex="-10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" >
+                    <DataGrid x:Name="tablaDonac" d:ItemsSource="{d:SampleData ItemCount=4}" Margin="11,87,112,304" RenderTransformOrigin="0.495,0.749" Grid.ColumnSpan="2" MouseDoubleClick="tablaDona_MouseDoubleClick" SnapsToDevicePixels="True" CanUserReorderColumns="False" CanUserResizeColumns="False" Grid.Column="1" ColumnWidth="75" MinColumnWidth="40" Background="#00000000" Panel.ZIndex="-10" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Header="ID" />
+                            <DataGridTextColumn  Binding="{Binding Dni}" Header="DNI" />
+                            <DataGridTextColumn  Binding="{Binding CodSanitario}" Header="codSanitario"  />
+                            <DataGridTextColumn  Binding="{Binding Centro}" Header="Centro"  />
+                            <DataGridTextColumn  Binding="{Binding Fecha}" Header="Fecha"  />
+                            <DataGridTextColumn  Binding="{Binding Cantidad}" Header="Cantidad"  />
+                        </DataGrid.Columns>
                         <DataGrid.CellStyle>
                             <Style TargetType="{x:Type DataGridCell}">
                                 <Style.Setters>
