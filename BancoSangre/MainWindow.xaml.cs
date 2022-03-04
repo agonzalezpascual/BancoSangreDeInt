@@ -40,6 +40,7 @@ namespace BancoSangre
 
 
         Donante d;
+        Donacion donacion;
         CRUD c = new CRUD();
 
         // Listas para comprobar la compatibilidad de donaciones
@@ -417,5 +418,24 @@ namespace BancoSangre
         public SeriesCollection s{ get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
+
+        private void botAnadirSan_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaDonacion.Owner = this;
+            VentanaDonacion.cambiaEstado(true);
+            VentanaDonacion.Show();
+            //rectangulo.Visibility = Visibility.Visible;
+            pueblaTablaDonaciones();
+        }
+
+        private void botEliDonac_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tablaDonac_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
     }
