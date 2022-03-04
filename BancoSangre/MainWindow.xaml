@@ -117,9 +117,15 @@
                         </TextBox.Effect>
                     </TextBox>
                     <Image Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="336,452,0,0" VerticalAlignment="Top" Width="20" Source="/lupita.png" Stretch="Fill" RenderTransformOrigin="2.425,4.977"/>
-                    <Button x:Name="botModsan" Content="Modificar" HorizontalAlignment="Left" Margin="431,36,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click" Height="25" Width="54"/>
-                    <Button x:Name="botElisan" Content="Eliminar" HorizontalAlignment="Left" Margin="493,29,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botEliDonac_Click" Height="25" Width="46"/>
-                    <Button x:Name="botAnadirsan" Content="Añadir" HorizontalAlignment="Left" Margin="366,41,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botAnadirSan_Click" Height="25" Width="39"/>
+
+
+                    <Image Grid.Column="2" HorizontalAlignment="Left" Height="40" Margin="368,36,0,0" VerticalAlignment="Top" Width="36" Source="/add.png" Panel.ZIndex="-6"/>
+                    <Image Grid.Column="2" HorizontalAlignment="Left" Height="38" Margin="421,35,0,0" VerticalAlignment="Top" Width="37" Source="/edit.png" Panel.ZIndex="-3"/>
+                    <Image Grid.Column="2" HorizontalAlignment="Left" Height="36" Margin="523,34,0,0" VerticalAlignment="Top" Width="36" Source="/delete.png" Panel.ZIndex="-3"/>
+
+                    <Button x:Name="botModsan" Content="Modificar" HorizontalAlignment="Left" Margin="412,36,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botMod_Click" Height="36" Width="54" Opacity="0"/>
+                    <Button x:Name="botElisan" Content="Eliminar" HorizontalAlignment="Left" Margin="518,40,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botEliDonac_Click" Height="25" Width="46" Visibility="Visible" Opacity="0"/>
+                    <Button x:Name="botAnadirsan" Content="Añadir" HorizontalAlignment="Left" Margin="366,41,0,0" VerticalAlignment="Top" Grid.Column="2" Click="botAnadirSan_Click" Height="29" Width="39" Opacity="0"/>
 
                 </Grid>
             </TabItem>
@@ -130,20 +136,28 @@
                         <ColumnDefinition Width="33*"/>
                         <ColumnDefinition Width="761*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Column="1" Content="Grupo Sanguíneo" HorizontalAlignment="Left" Margin="47,216,0,0" VerticalAlignment="Top" Height="32" Width="194"/>
-                    <Label Grid.Column="1" Content="RH" HorizontalAlignment="Left" Margin="47,272,0,0" VerticalAlignment="Top" Height="32" Width="49"/>
-                    <ComboBox x:Name="comboGrup" Grid.Column="1" HorizontalAlignment="Left" Margin="271,221,0,0" VerticalAlignment="Top" Width="90" Height="32">
+                    <Label Grid.Column="1" Content="Grupo Sanguíneo" HorizontalAlignment="Left" Margin="55,80,0,0" VerticalAlignment="Top" Height="32" Width="194"/>
+                    <Label Grid.Column="1" Content="RH" HorizontalAlignment="Left" Margin="55,136,0,0" VerticalAlignment="Top" Height="32" Width="49"/>
+                    <ComboBox x:Name="comboGrup" Grid.Column="1" HorizontalAlignment="Left" Margin="279,85,0,0" VerticalAlignment="Top" Width="90" Height="32">
                         <ComboBoxItem Content="A"/>
                         <ComboBoxItem Content="B"/>
                         <ComboBoxItem Content="AB"/>
                         <ComboBoxItem Content="0"/>
                     </ComboBox>
-                    <ComboBox x:Name="comboRh" Grid.Column="1" HorizontalAlignment="Left" Margin="271,277,0,0" VerticalAlignment="Top" Width="90" Height="31">
+                    <ComboBox x:Name="comboRh" Grid.Column="1" HorizontalAlignment="Left" Margin="279,141,0,0" VerticalAlignment="Top" Width="90" Height="31">
                         <ComboBoxItem Content="+"/>
                         <ComboBoxItem Content="-"/>
                     </ComboBox>
-                    <Button x:Name="botCompa" Grid.Column="1" Content="Averiguar Compatibilidad" HorizontalAlignment="Left" Margin="55,351,0,0" VerticalAlignment="Top" Click="botCompa_Click" Height="33" Width="291"/>
+                    <Button x:Name="botCompa" Grid.Column="1" Content="Averiguar Compatibilidad" HorizontalAlignment="Left" Margin="63,215,0,0" VerticalAlignment="Top" Click="botCompa_Click" Height="33" Width="291"/>
+                    <lvc:CartesianChart Series="{Binding SeriesCollectionsos}" LegendLocation="Left" Grid.ColumnSpan="2" Margin="0,281,520,34" Loaded="CartesianChart_Loaded">
 
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Donantes" Labels="{Binding Labelso}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="cantidad" LabelFormatter="{Binding Formattero}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+                    </lvc:CartesianChart>
 
 
 

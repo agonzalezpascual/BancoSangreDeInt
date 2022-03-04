@@ -152,7 +152,7 @@ namespace BancoSangre {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BancoSangre;V1.0.0.0;component/ventanainterfaz.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BancoSangre;component/ventanainterfaz.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\VentanaInterfaz.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
