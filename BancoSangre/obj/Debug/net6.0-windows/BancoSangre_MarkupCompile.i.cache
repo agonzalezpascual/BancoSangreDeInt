@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\App.xaml
-2314895856
+3-534952240
 
-11-531320996
+12-1469465365
 219-1342004931
-MainWindow.xaml;VentanaInterfaz.xaml;
+MainWindow.xaml;VentanaDonacion.xaml;VentanaInterfaz.xaml;
 
 True
 

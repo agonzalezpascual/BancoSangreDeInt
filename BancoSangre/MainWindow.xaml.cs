@@ -40,6 +40,7 @@ namespace BancoSangre
 
 
         Donante d;
+        Donacion donacion;
         CRUD c = new CRUD();
 
         // Listas para comprobar la compatibilidad de donaciones
@@ -56,6 +57,7 @@ namespace BancoSangre
         TreeViewItem dona = new TreeViewItem();
         TreeViewItem recibe = new TreeViewItem();
         VentanaInterfaz bWin = new VentanaInterfaz();
+        VentanaDonacion VentanaDonacion = new VentanaDonacion();
 
 
       
@@ -277,6 +279,7 @@ namespace BancoSangre
         private void ventana_Activated(object sender, EventArgs e)
         {
             pueblaTablaDonantes();
+            pueblaTablaDonaciones();
         }
     
 
@@ -416,5 +419,24 @@ namespace BancoSangre
         public SeriesCollection s{ get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
+
+        private void botAnadirSan_Click(object sender, RoutedEventArgs e)
+        {
+            VentanaDonacion.Owner = this;
+            VentanaDonacion.cambiaEstado(true);
+            VentanaDonacion.Show();
+            //rectangulo.Visibility = Visibility.Visible;
+            pueblaTablaDonaciones();
+        }
+
+        private void botEliDonac_Click(object sender, RoutedEventArgs e)
+        {
+            c.borrarDonac(donacion.Dni);
+        }
+
+        private void tablaDonac_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            donacion = (Donacion)tablaDonac.SelectedItem;
+        }
     }
     }

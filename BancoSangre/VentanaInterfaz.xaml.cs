@@ -69,9 +69,9 @@ namespace BancoSangre
             string rh = comboRh.Text;
             if (estado)
             {
-                c.insertar(txtNom.Text, txtApe.Text, txtDNI.Text, txtDir.Text, txtTel.Text, txtFec.Text, txtEma.Text, grupo, rh);
+                c.insertar("Donante",txtNom.Text, txtApe.Text, txtDNI.Text, txtDir.Text, txtTel.Text, txtFec.Text, txtEma.Text, grupo, rh);
             }
-            else c.actualizar(txtNom.Text, txtApe.Text, txtDNI.Text, txtDir.Text, txtTel.Text, txtFec.Text, txtEma.Text, grupo, rh);
+            else c.actualizar("Donante",txtNom.Text, txtApe.Text, txtDNI.Text, txtDir.Text, txtTel.Text, txtFec.Text, txtEma.Text, grupo, rh);
             this.Hide();
             limpiaCampos();
         }
