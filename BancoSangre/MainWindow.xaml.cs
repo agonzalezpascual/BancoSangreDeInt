@@ -56,6 +56,7 @@ namespace BancoSangre
         TreeViewItem dona = new TreeViewItem();
         TreeViewItem recibe = new TreeViewItem();
         VentanaInterfaz bWin = new VentanaInterfaz();
+        VentanaDonacion VentanaDonacion = new VentanaDonacion();
 
 
       
