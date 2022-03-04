@@ -119,6 +119,25 @@ namespace BancoSangre
             }
 
         }
+        public void borrarDonac(string DNI)
+        {
+            try
+            {
+                // Creamos la conexión y hacemos la consulta
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand command = new SqlCommand("DELETE FROM Donacion WHERE DNI = '" + DNI + "';", con);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Insertado correctamente.");
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR " + ex.Message, "Error al insertar los datos.", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+        }
 
 
         // Método buscar

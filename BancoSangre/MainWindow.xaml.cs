@@ -279,6 +279,7 @@ namespace BancoSangre
         private void ventana_Activated(object sender, EventArgs e)
         {
             pueblaTablaDonantes();
+            pueblaTablaDonaciones();
         }
     
 
@@ -430,12 +431,12 @@ namespace BancoSangre
 
         private void botEliDonac_Click(object sender, RoutedEventArgs e)
         {
-
+            c.borrarDonac(donacion.Dni);
         }
 
         private void tablaDonac_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            donacion = (Donacion)tablaDonac.SelectedItem;
         }
     }
     }
