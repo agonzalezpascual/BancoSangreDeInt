@@ -191,6 +191,41 @@ namespace BancoSangre
 
 
         }
+        public int cantidadDonaciones() {
+            int cantidad = 0;
+            try
+            {
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Donacion;", con);
+                cantidad = (Int32)command.ExecuteScalar();
+                return cantidad;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR " + ex.Message, "Error al consultar el rosco", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                return cantidad;
+            }
+        }
+        public int cantidadDonantes()
+        {
+            int cantidad = 0;
+            try
+            {
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Donante;", con);
+                cantidad = (Int32)command.ExecuteScalar(); 
+                return cantidad;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR " + ex.Message, "Error al consultar el rosco", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                return cantidad;
+            }
+        }
     }
 }
 

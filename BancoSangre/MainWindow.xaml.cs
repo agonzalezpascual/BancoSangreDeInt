@@ -76,6 +76,8 @@ namespace BancoSangre
         public void pueblaTablaDonantes()
         {
             
+            headerDonantestext.Content = c.cantidadDonantes();
+
             using (bancosangreContext _context = new bancosangreContext())
             {
                 listDon = _context.Donantes.ToList();
@@ -87,6 +89,7 @@ namespace BancoSangre
 
         public void pueblaTablaDonaciones()
         {
+            headerDonacionestext.Content = c.cantidadDonaciones()+"";
             using (bancosangreContext _context = new bancosangreContext())
             {
                 listDonac = _context.Donacions.ToList();
