@@ -4,16 +4,21 @@
 winexe
 C#
 .cs
-C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\
+C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\
 BancoSangre
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangre\BancoSangreDeInt\BancoSangre\App.xaml
+C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\App.xaml
 3-534952240
 
+<<<<<<< HEAD
 11372994266
 219-812146430
+=======
+10-1974926475
+219-1342004931
+>>>>>>> 4c39278ebae8d7c8a60b8983a9d52b22a52f5380
 MainWindow.xaml;VentanaDonacion.xaml;VentanaInterfaz.xaml;
 
 False

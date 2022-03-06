@@ -12,8 +12,10 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\dam2\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\dam2\\.nuget\\packages"
+      "C:\\Users\\User-01\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\User-01\\.nuget\\packages",
+      "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

@@ -302,8 +302,11 @@ namespace BancoSangre
 
         private void ventana_Activated(object sender, EventArgs e)
         {
+            dibujaRosco();
+
             pueblaTablaDonantes();
             pueblaTablaDonaciones();
+            dibujarcolumnas();
         }
     
 
@@ -355,19 +358,65 @@ namespace BancoSangre
             get; set;
 
         }
+        public SeriesCollection SeriesCollectionsos { get; set; }
 
-        
-        private void PieChart_Loaded(object sender, RoutedEventArgs e)
-        {
+        public string[] Labelso { get; set; }
+        public Func<double, string> Formattero { get; set; }
+        public void dibujarcolumnas() {
+
+            CRUD two = new CRUD();
+            double apos = two.RellenarPalitos("a" , "+");
+            double aneg = two.RellenarPalitos("a" , "-");
+            double bpos = two.RellenarPalitos("b", "+");
+            double bneg = two.RellenarPalitos("b", "-");
+            double abpos = two.RellenarPalitos("ab", "+");
+            double abneg = two.RellenarPalitos("ab", "-");
+            double zeropos = two.RellenarPalitos("0", "+");
+            double zeroneg = two.RellenarPalitos("0", "-");
+
+
+            SeriesCollectionsos = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "+",
+                    Values = new ChartValues<double> { apos, bpos, abpos, zeropos },
+                    Fill = Brushes.Crimson
+
+                }
+            };
+
+            //adding series will update and animate the chart automatically
+            SeriesCollectionsos.Add(new ColumnSeries
+            {
+                Title = "-",
+                Values = new ChartValues<double> { aneg, bneg, abneg, zeroneg },
+                Fill = Brushes.Firebrick
+
+            });
+
+            //also adding values updates and animates the chart automatically
+           
+
+            Labelso = new[] { "A", "B", "AB", "O" };
+            Formattero = value => value.ToString("N");
+
+            DataContext = this;
+
+           
+        }
+    
+        public void dibujaRosco() {
             CRUD one = new CRUD();
-           double a= one.RellenarRosco("a");
-           double b= one.RellenarRosco("b");
-           double ab= one.RellenarRosco("ab");
-           double zero= one.RellenarRosco("0");
+            double a = one.RellenarRosco("a");
+            double b = one.RellenarRosco("b");
+            double ab = one.RellenarRosco("ab");
+            double zero = one.RellenarRosco("0");
 
 
 
-            try {
+            try
+            {
 
                 SeriesCollection = new SeriesCollection {
 
@@ -407,12 +456,19 @@ namespace BancoSangre
                 },
             };
                 DataContext = this;
-                    }
-            catch (Exception exp){
+            }
+            catch (Exception exp)
+            {
 
                 MessageBox.Show("hay un error");
-            
+
             }
+        }
+
+        
+        private void PieChart_Loaded(object sender, RoutedEventArgs e)
+        {
+            dibujaRosco();
 
 
         }
@@ -461,6 +517,11 @@ namespace BancoSangre
         private void tablaDonac_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             donacion = (Donacion)tablaDonac.SelectedItem;
+        }
+
+        private void CartesianChart_Loaded(object sender, RoutedEventArgs e)
+        {
+            dibujarcolumnas();
         }
     }
     }

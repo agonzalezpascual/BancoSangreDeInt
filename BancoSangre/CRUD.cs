@@ -236,6 +236,30 @@ namespace BancoSangre
                 return cantidad;
             }
         }
+
+        internal double RellenarPalitos(string tiposangre, string tiporh)
+        {
+            //he parido esta mierda luego de 2 putos dias jodeeeer siiiii ostiaaaaaa
+            int je = 0;
+            try
+            {
+
+                SqlConnection con = new SqlConnection(conexion);
+                con.Open();
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Donante WHERE grupo = '" + tiposangre + "' AND rh= '"+tiporh+"';", con);
+
+                je = (Int32)command.ExecuteScalar();
+
+                return je;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR " + ex.Message, "Error al consultar el palito", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                return je;
+            }
+        }
     }
 }
 

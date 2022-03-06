@@ -200,3 +200,5 @@ C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\Banco
 C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\BancoSangre.genruntimeconfig.cache
 C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\VentanaDonacion.g.cs
 C:\Users\dam2\Desktop\Alfonso\DeInt\Segundo Trimestre\Trabajo2\BancoSangre\BancoSangre\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\VentanaDonacion.baml
+C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\VentanaDonacion.g.cs
+C:\Users\User-01\source\repos\agonzalezpascual\BancoSangreDeInt\BancoSangre\obj\Debug\net6.0-windows\VentanaDonacion.baml
