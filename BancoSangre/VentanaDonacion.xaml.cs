@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace BancoSangre
 {
     /// <summary>
     /// Lógica de interacción para VentanaDonacion.xaml
     /// </summary>
-    public partial class VentanaDonacion : Window
+    public partial class VentanaDonacion :  MetroWindow
     {
         CRUD c = new CRUD();
         Donacion d;
