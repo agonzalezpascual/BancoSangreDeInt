@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Archivos varios",
       "ColorIndex": -1
+    },
+    "4a6284f3-7fd0-4d6d-9be2-3b2704d4c22d": {
+      "ProjectGuid": "4a6284f3-7fd0-4d6d-9be2-3b2704d4c22d",
+      "DisplayName": "BancoTest",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

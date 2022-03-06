@@ -9,10 +9,20 @@ using System.Windows;
 
 namespace BancoSangre
 {
-    internal class CRUD
+    public class CRUD
     {
         private String conexion = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=bancosangre;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public List<Donante> listPer { get; set; }
+
+        // Método abre conexion
+        public int AbreConexion() {
+            SqlConnection con = new SqlConnection(conexion);
+            con.Open();
+            ConnectionState s = con.State;
+            
+            return (int)s;
+
+        }
 
         // Método insertar
         public void insertar(string tabla, string textoNom, string textoApe, string textoDNI, string textoDirec, string textoTelf, string textoNac, string textoEma, string textoGru, string textoRh)

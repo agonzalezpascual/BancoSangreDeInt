@@ -144,17 +144,14 @@ namespace BancoSangre
         }
 
 
-        private void botCompa_Click(object sender, RoutedEventArgs e)
-        {
-            String grup = comboGrup.Text;
-            String rh = comboRh.Text;
-            recibe.Items.Clear();
-            dona.Items.Clear();
-            if (grup.Equals("A"))
+        public void RellenaTree(string grupoR, string rhR) {
+            
+            
+            if (grupoR.Equals("A"))
             {
                 foreach (String s in Are)
                 {
-                    if (rh.Equals("+"))
+                    if (rhR.Equals("+"))
                     {
                         recibe.Items.Add(s + "+");
                     }
@@ -162,7 +159,7 @@ namespace BancoSangre
                 }
                 foreach (String s in Ado)
                 {
-                    if (rh.Equals("-"))
+                    if (rhR.Equals("-"))
                     {
                         dona.Items.Add(s + "-");
                     }
@@ -171,11 +168,11 @@ namespace BancoSangre
 
 
             }
-            else if (grup.Equals("B"))
+            else if (grupoR.Equals("B"))
             {
                 foreach (String s in Bre)
                 {
-                    if (rh.Equals("+"))
+                    if (rhR.Equals("+"))
                     {
                         recibe.Items.Add(s + "+");
                     }
@@ -183,7 +180,7 @@ namespace BancoSangre
                 }
                 foreach (String s in Bdo)
                 {
-                    if (rh.Equals("-"))
+                    if (rhR.Equals("-"))
                     {
                         dona.Items.Add(s + "-");
                     }
@@ -192,11 +189,11 @@ namespace BancoSangre
 
 
             }
-            else if (grup.Equals("AB"))
+            else if (grupoR.Equals("AB"))
             {
                 foreach (String s in ABre)
                 {
-                    if (rh.Equals("+"))
+                    if (rhR.Equals("+"))
                     {
                         recibe.Items.Add(s + "+");
                     }
@@ -204,7 +201,7 @@ namespace BancoSangre
                 }
                 foreach (String s in ABdo)
                 {
-                    if (rh.Equals("-"))
+                    if (rhR.Equals("-"))
                     {
                         dona.Items.Add(s + "-");
                     }
@@ -213,11 +210,11 @@ namespace BancoSangre
 
 
             }
-            else if (grup.Equals("0"))
+            else if (grupoR.Equals("0"))
             {
                 foreach (String s in Ore)
                 {
-                    if (rh.Equals("+"))
+                    if (rhR.Equals("+"))
                     {
                         recibe.Items.Add(s + "+");
                     }
@@ -225,7 +222,7 @@ namespace BancoSangre
                 }
                 foreach (String s in Odo)
                 {
-                    if (rh.Equals("-"))
+                    if (rhR.Equals("-"))
                     {
                         dona.Items.Add(s + "-");
                     }
@@ -234,10 +231,34 @@ namespace BancoSangre
 
 
             }
+           
+        }
+
+        private void botCompa_Click(object sender, RoutedEventArgs e)
+        {
+            recibe.Items.Clear();
+            dona.Items.Clear();
+
+
+            String grup = comboGrup.Text;
+            String rh = comboRh.Text;
+            //RellenaTree(grup,rh);
+            Compatibilidad c = new Compatibilidad();
+            foreach(string s in c.RellenaTree(grup, rh))
+            {
+                dona.Items.Add(s);
+
+            }
+            foreach (string r in c.RellenaTreeRecibe(grup, rh))
+            {
+                recibe.Items.Add(r);
+            }
+
+
+
             compatibilidad.IsExpanded = true;
             dona.IsExpanded = true;
             recibe.IsExpanded = true;
-
         }
 
         private void botAnadir_Click(object sender, RoutedEventArgs e)
